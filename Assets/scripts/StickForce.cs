@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StickForce : MonoBehaviour {
 
+	public Text scoreText1; 
+	public Text scoreText2;
 	// Use this for initialization
 	void Start () {
 		GetComponent<ConstantForce> ().enabled = false;
@@ -17,6 +20,16 @@ public class StickForce : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.CompareTag("2")) {
+			if (GameFlow.playerturn == 1) {
+				scoreText1.text = "player 1 score: you lost";
+				scoreText2.text = "player 2 score: " + GameFlow.score2;
+			}
+			if (GameFlow.playerturn == 2) {
+				scoreText1.text = "player 2 score: you lost";
+				scoreText2.text = "player 1 score: " + GameFlow.score1;
+			}
+		}
 		if (collision.gameObject.CompareTag ("0")) {
 			Destroy (collision.gameObject);
 		}

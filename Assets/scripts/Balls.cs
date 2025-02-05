@@ -19,7 +19,9 @@ public class Balls : MonoBehaviour {
 		int balls_moving = 0;
 
 		foreach (Rigidbody t in obj) {
-			
+			if (t != null) {
+				
+			}
 		}
 	}
 }
