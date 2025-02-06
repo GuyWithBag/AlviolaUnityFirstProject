@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// thjis is supposedly stick.cs
+
 public class StickForce : MonoBehaviour {
 
 	public Text scoreText1; 

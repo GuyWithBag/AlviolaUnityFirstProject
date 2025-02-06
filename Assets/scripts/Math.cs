@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Math : MonoBehaviour {
 
-	TextMesh[] num;
+	public TextMesh[] num;
+
 	// Use this for initialization
 	void Start () {
 		num = GetComponentsInChildren<TextMesh> ();

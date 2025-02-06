@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FF4C0362-A2F8-27CD-3205-0F4E3FDBEED5}</ProjectGuid>
+    <ProjectGuid>{A57A8B7C-1B5D-16CC-D234-543905C0A69B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Heart_Life\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
      <Compile Include="Assets\scripts\Balls.cs" />
+     <Compile Include="Assets\scripts\Gems.cs" />
      <Compile Include="Assets\scripts\Math.cs" />
      <Compile Include="Assets\scripts\MyLife.cs" />
      <Compile Include="Assets\scripts\NextBall.cs" />

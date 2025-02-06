@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// this is supposedly stick_rotate.cs
+
 public class StickMovement : MonoBehaviour {
 
 	// Use this for initialization
