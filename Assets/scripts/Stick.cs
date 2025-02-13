@@ -5,17 +5,28 @@ using UnityEngine.UI;
 
 // thjis is supposedly stick.cs
 
-public class StickForce : MonoBehaviour {
+public class Stick : MonoBehaviour {
 
 	public Text scoreText1; 
 	public Text scoreText2;
+	Rigidbody rb; 
+	public static float ScrollSpeed;
+
 	// Use this for initialization
 	void Start () {
 		GetComponent<ConstantForce> ().enabled = false;
+		rb = GetComponent<Rigidbody> ();
+		rb.isKinematic = true; 
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (ScrollSpeed <= 2500) {
+			ScrollSpeed += 20;
+		} else {
+			ScrollSpeed = 0; 
+		}
+
 		if (Input.GetButtonUp("Fire1")) {
 			GetComponent<ConstantForce> ().enabled = true;
 		}

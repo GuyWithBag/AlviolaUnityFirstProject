@@ -44,7 +44,7 @@ public class HoleScript2 : MonoBehaviour {
 		eightText.enabled = false;
 
 		if (gemsScript == null) {
-			gemsScript = GameObject.FindObjectOfTypes<Gems>(); 
+			gemsScript = GameObject.FindObjectOfType<Gems>(); 
 		}
 	}
 

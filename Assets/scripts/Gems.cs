@@ -16,18 +16,19 @@ public class Gems : MonoBehaviour {
 
 	public void ShowNumbers(int value)
 	{
-		if (!IsNumberActive(value)) {
-			activeNumbers [activeCount] = value; 
-			activeCount++; 
-		}
-		foreach (GameObject gem in gemsArray) {
-			gem.SetActive (false); 
+		//foreach (GameObject gem in gemsArray) {
+		// gem.SetActive (false);
+
+		//}
+
+		for (int i = 0; i < gemsArray.Length; i++) {
+			if (gemsArray [i] != null)
+				gemsArray [i].gameObject.SetActive (false);
 		}
 
 		for (int i = 5; i < numbers.Length; i++) {
-			if (numbers [i] != null) {
-				numbers [i].gameObject.SetActive (false); 
-			}
+			if (numbers [i] != null)
+				numbers [i].gameObject.SetActive (false);
 		}
 
 		for (int j = 0; j < activeCount; j++) {

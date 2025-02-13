@@ -47,14 +47,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Heart_Life\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+     <Compile Include="Assets\scripts\Audience.cs" />
      <Compile Include="Assets\scripts\Balls.cs" />
      <Compile Include="Assets\scripts\Gems.cs" />
      <Compile Include="Assets\scripts\Math.cs" />
      <Compile Include="Assets\scripts\MyLife.cs" />
      <Compile Include="Assets\scripts\NextBall.cs" />
      <Compile Include="Assets\scripts\NextBall_CollisionEnter.cs" />
-     <Compile Include="Assets\scripts\StickForce.cs" />
-     <Compile Include="Assets\scripts\StickMovement.cs" />
+     <Compile Include="Assets\scripts\RotateStick.cs" />
+     <Compile Include="Assets\scripts\SaveXML.cs" />
+     <Compile Include="Assets\scripts\ScrollbarController.cs" />
+     <Compile Include="Assets\scripts\Stick.cs" />
+     <Compile Include="Assets\scripts\User.cs" />
      <Compile Include="Assets\scripts\static\GameFlow.cs" />
      <None Include="Assets\Heart_Life\Gems Ultimate Pack\spritefont_and_other\document_and_picturelist\readme.txt" />
  <Reference Include="UnityEngine.UI">

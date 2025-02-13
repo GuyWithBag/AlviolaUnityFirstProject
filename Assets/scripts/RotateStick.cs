@@ -4,7 +4,7 @@ using UnityEngine;
 
 // this is supposedly stick_rotate.cs
 
-public class StickMovement : MonoBehaviour {
+public class RotateStick : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
