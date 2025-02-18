@@ -14,7 +14,7 @@ public class Stick : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<ConstantForce> ().enabled = false;
+		GetComponent<ConstantForce> ().enabled = true;
 		rb = GetComponent<Rigidbody> ();
 		rb.isKinematic = true; 
 	}
@@ -28,7 +28,9 @@ public class Stick : MonoBehaviour {
 		}
 
 		if (Input.GetButtonUp("Fire1")) {
-			GetComponent<ConstantForce> ().enabled = true;
+			rb.isKinematic = false;
+			//GetComponent<ConstantForce> ().enabled = true;
+			rb.AddForce (transform.up * ScrollSpeed, ForceMode.Force ); 
 		}
 	}
 
