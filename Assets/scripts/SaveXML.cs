@@ -2,35 +2,87 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveXML : MonoBehaviour {
+using System.Xml;
+using System.IO;
 
-	// Use this for initialization
-	void Start () {
-		doc.Load (RenderingPath + "\\Assets\\USer_data.xml");
-		XmlNode root = doc.FirstChild;
-		XmlNodeList elemList = doc.GetElementByTagName ("name"); 
-		for (int i = 0; i < elemList.count; i++) {
-			
-		}
-	}
+public class SaveXML : MonoBehaviour
+{
 
-	public void AddNew() {
-		XmlElement roots = doc.DocumentElement; 
-		XmlElement x1 = doc.CreateElement ("user");
-		XmlElement x2 = doc.CreateElement ("name");
-		XmlElement x3 = doc.CreateElement ("hostname");
-		XmlElement x4 = doc.CreateElement ("ipaddress");
-		XmlElement x5 = doc.CreateElement ("started");
-		XmlElement x6 = doc.CreateElement ("ended");
-		XmlElement x7 = doc.CreateElement ("life_left");
+    string path = Directory.GetCurrentDirectory();
+    XmlDocument doc = new XmlDocument();
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (save_now == true) {
-			AddNew ();
-			save_now = false; 
-		}
-	}
+
+    public static bool save_now = false;
+
+    void Start()
+    {
+
+        doc.Load(path + "\\Assets\\user_data.xml");
+
+        XmlNode root = doc.FirstChild;
+
+        XmlNodeList elemList = doc.GetElementsByTagName("name");
+
+        for (int i = 0; i < elemList.Count; i++)
+        {
+            //print(elemList[i].InnerXml);
+        }
+
+
+
+
+    }
+
+    void Update()
+    {
+        if (save_now == true)
+        {
+            add_new();
+            save_now = false;
+        }
+    }
+
+    public void add_new()
+    {
+        XmlElement roots = doc.DocumentElement;
+
+        XmlElement e1 = doc.CreateElement("user");
+        XmlElement e2 = doc.CreateElement("name");
+        XmlElement e3 = doc.CreateElement("hostname");
+        XmlElement e4 = doc.CreateElement("ipaddress");
+        XmlElement e5 = doc.CreateElement("started");
+        XmlElement e6 = doc.CreateElement("ended");
+        XmlElement e7 = doc.CreateElement("life_left");
+
+        if (roots != null)
+        {
+            roots.InsertAfter(e1, roots.LastChild);
+        }
+
+        if (e1 != null)
+        {
+            e1.InsertAfter(e2, e1.LastChild);
+            e2.InnerText = User.current_user;
+
+            e1.InsertAfter(e3, e1.LastChild);
+            e3.InnerText = User.hostName;
+
+            e1.InsertAfter(e4, e1.LastChild);
+            e4.InnerText = User.myIP;
+
+            e1.InsertAfter(e5, e1.LastChild);
+            e5.InnerText = User.now.ToString();
+
+            e1.InsertAfter(e6, e1.LastChild);
+            //e6.InnerText = goodjob.end_time.ToString();
+            e6.InnerText = "";
+
+            e1.InsertAfter(e7, e1.LastChild);
+            e7.InnerText = MyLife.numlife.ToString();
+        }
+
+        doc.Save(path + "\\Assets\\user_data.xml");
+    }
+
+
 }

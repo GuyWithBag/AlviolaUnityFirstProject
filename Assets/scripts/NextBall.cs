@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HoleScript2 : MonoBehaviour {
+public class NextBall : MonoBehaviour {
 
 
 	public Text oneText;

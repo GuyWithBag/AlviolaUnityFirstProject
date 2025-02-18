@@ -20,7 +20,9 @@ public class Balls : MonoBehaviour {
 
 		foreach (Rigidbody t in obj) {
 			if (t != null) {
-				
+				if (t.velocity != Vector3.zero) {
+					balls_moving++; 
+				}
 			}
 		}
 	}

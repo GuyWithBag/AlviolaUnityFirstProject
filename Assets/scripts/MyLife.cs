@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MyLife : MonoBehaviour {
 
-	public int numlife = 9;
+	static public int numlife = 9;
 	public GameObject[] obj;
 
 	// Use this for initialization

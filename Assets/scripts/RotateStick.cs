@@ -15,10 +15,10 @@ public class RotateStick : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey("w")) {
-			transform.Rotate(0, 0, -1);
+			transform.Rotate(0, 0, 1);
 		} 
 		if (Input.GetKey("s")) {
-			transform.Rotate(0, 0, 1);
+			transform.Rotate(0, 0, -1);
 		} 
 		if (Input.GetKey("a")) {
 			transform.Rotate(-1, 0, 0);
